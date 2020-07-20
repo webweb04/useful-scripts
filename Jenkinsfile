@@ -29,6 +29,7 @@ node {
      sh "sh ./SUT.sh >testlog.txt "
 
         sh "diff testlog.txt reflog.txt >diff.txt"
+        archiveArtifacts artifacts: 'diff.txt'
         sh "sh checkempty.sh "
     }
     stage('Deploy') { 
