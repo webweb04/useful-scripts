@@ -29,7 +29,7 @@ node {
      sh "sh ./SUT.sh >testlog.txt "
 
         sh "diff testlog.txt reflog.txt >diff.txt"
-        archiveArtifacts artifacts: './*.txt'
+        archiveArtifacts artifacts: './*.txt' , excludes: './*.md'
        // sh "sh checkempty.sh "
     }
     stage('Deploy') { 
