@@ -28,7 +28,8 @@ node {
    
      sh "sh ./SUT.sh >testlog.txt "
 
-        sh "cat testlog.txt"
+        sh "diff testlog.txt reflog.txt >diff.txt"
+        sh "sh checkempty.sh "
     }
     stage('Deploy') { 
         // 
