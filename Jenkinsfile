@@ -20,7 +20,7 @@ node {
                 echo "Archive build output"
 
                 // Archive the build output artifacts.
-                archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
+              //  archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
     }
     stage('Test') { 
       // sh " echo https://github.com/lzjun567/python_scripts |  /usr/bin/python   02_find_all_links.py >testlog.log"
