@@ -30,7 +30,7 @@ node {
 
         sh "diff testlog.txt reflog.txt >diff.txt"
         archiveArtifacts artifacts: 'diff.txt'
-        sh "sh checkempty.sh "
+       // sh "sh checkempty.sh "
     }
     stage('Deploy') { 
         // 
