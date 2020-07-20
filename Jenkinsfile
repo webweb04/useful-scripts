@@ -20,7 +20,7 @@ node {
                 echo "Archive build output"
 
                 // Archive the build output artifacts.
-              //  archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
+                archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
     }
     stage('Test') { 
       // sh " echo https://github.com/lzjun567/python_scripts |  /usr/bin/python   02_find_all_links.py >testlog.log"
@@ -28,9 +28,10 @@ node {
    
      sh "sh ./SUT.sh >testlog.txt "
 
-        sh "diff testlog.txt reflog.txt >output/diff.txt"
-        archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
-       // sh "sh checkempty.sh "
+        sh "diff testlog.txt reflog.txt >diff.txt"
+       // archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
+        sh "cat diff.txt"
+        sh "sh checkempty.sh "
     }
     stage('Deploy') { 
         // 
