@@ -31,9 +31,9 @@ node {
         sh "diff testlog.txt reflog.txt >diff.txt"
        // archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
         sh "cat diff.txt"
-        sh "sh checkempty.sh "
+        
     }
-    stage('Deploy') { 
-        // 
+    stage('TestResultCheck') { 
+       sh "sh checkempty.sh "
     }
 }
