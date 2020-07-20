@@ -25,9 +25,10 @@ node {
     stage('Test') { 
       // sh " echo https://github.com/lzjun567/python_scripts |  /usr/bin/python   02_find_all_links.py >testlog.log"
      //  sh "diff testlog.log reflog.log"
-     sh "cd bin/c"
-     sh "c <  uname -a "
-     
+   
+     sh "sh SUT.sh >testlog.txt "
+
+        sh "cat testlog.txt"
     }
     stage('Deploy') { 
         // 
