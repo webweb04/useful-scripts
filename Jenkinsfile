@@ -31,7 +31,7 @@ node {
         sh "diff testlog.txt reflog.txt >diff.txt"
         sh "cp diff.txt diff.sh"
           // Archive the build output artifacts.
-        archiveArtifacts artifacts: './*.sh', excludes: './*.md'
+        archiveArtifacts artifacts: '*.sh', excludes: '*.md'
         sh "cat diff.txt"
         
     }
