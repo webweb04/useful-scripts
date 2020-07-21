@@ -29,8 +29,8 @@ node {
      sh "sh ./SUT.sh >testlog.txt "
     sh "diff testlog.txt reflog.txt"
         sh "diff testlog.txt reflog.txt >diff.txt"
-        sh "cp diff.txt output/"
-       // archiveArtifacts artifacts: 'output/*.txt', excludes: 'output/*.md'
+        sh "cp diff.txt diff.sh"
+       // archiveArtifacts artifacts: 'output/*.sh', excludes: 'output/*.md'
         sh "cat diff.txt"
         
     }
